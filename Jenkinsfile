@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo '=== Building Petclinic Docker Image ==='
                 script {
-                    app = docker.build("eloka/petclinic-spinnaker-jenkins")
+                    app = docker.build("eloka/new-terraform-petclinic-piprline)
                 }
             }
         }
@@ -51,8 +51,8 @@ pipeline {
         stage('Remove local images') {
             steps {
                 echo '=== Delete the local docker images ==='
-                sh("docker rmi -f eloka/petclinic-spinnaker-jenkins:latest || :")
-                sh("docker rmi -f eloka/petclinic-spinnaker-jenkins:$SHORT_COMMIT || :")
+                sh("docker rmi -f eloka/new-terraform-petclinic-piprline:latest || :")
+                sh("docker rmi -f eloka/new-terraform-petclinic-piprline:$SHORT_COMMIT || :")
             }
         }
     }
